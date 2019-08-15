@@ -1,13 +1,13 @@
-name:               concat-inline
+name:               concat-satisfy
 version:            0.1.0.0
 cabal-version:      >=1.18
-synopsis:           Simple GHC plugin for inlining class-ops
-description:        Simple GHC plugin for inlining class-ops
+synopsis:           GHC plugin for forcing constraint satisfaction
+description:        GHC plugin for forcing constraint satisfaction
 Category:           categories
 license:            BSD3
 author:             Conal Elliott
 maintainer:         conal@conal.net
-Copyright:          (c) 2016-2017 by Conal Elliott
+Copyright:          (c) 2018 by Conal Elliott
 build-type:         Simple
 
 source-repository head
@@ -18,10 +18,14 @@ library
   default-language: Haskell2010
   hs-source-dirs:   src
   include-dirs:     src
-  build-depends:    base >=4.9, ghc
+  build-depends:    base >=4.9
+                  , ghc >= 8.0.1
+                  , syb >= 0.6
   ghc-options:      -O2
   exposed-modules:  
+                    ConCat.Simplify
+                    ConCat.BuildDictionary
+                    ConCat.Satisfy
+                    ConCat.Satisfy.Plugin
                     ConCat.Inline.ClassOp
                     ConCat.Inline.Plugin
-                    ConCat.Inline.SampleMethods
-
