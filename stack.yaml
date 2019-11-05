@@ -6,8 +6,8 @@ packages:
   - classes
   - plugin
   - examples
-  - graphics
-  - hardware
+  #- graphics
+  #- hardware
   #- sandbox
 extra-deps:
   # Extra packages

@@ -85,6 +85,7 @@ preinstall: &preinstall
 
         # required for packcheck
         apt-get install -y curl
+        apt-get install -y git
 
         # required for outbound https for stack and for stack setup
         apt-get install -y netbase xz-utils make
